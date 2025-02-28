@@ -25,7 +25,7 @@ def vae_loss(reconstructed_x, x, mu, log_var):
     kl_divergence = -0.5 * torch.sum(1 + log_var - mu.pow(2) - log_var.exp())
     return reconstruction_loss + kl_divergence
 
-epochs = 5
+epochs = 50
 batch_size = 64
 
 train_loader = DataLoader(TensorDataset(X_train_tensor), batch_size=batch_size, shuffle=True)
